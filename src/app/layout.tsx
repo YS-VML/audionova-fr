@@ -24,8 +24,8 @@ const lausanne = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Audionova Hearing Test",
-  description: "Test your hearing with Audionova",
+  title: "AuditionSanté - Test Auditif",
+  description: "Testez votre audition avec AuditionSanté",
 };
 
 export default function RootLayout({
@@ -34,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body className={lausanne.variable}>
         {children}
       </body>

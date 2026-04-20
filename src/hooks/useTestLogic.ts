@@ -2,21 +2,21 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 
 const STAGE_CONFIG: Record<string, { title: string; description: string; next: string; keyword: string }> = {
   restaurant: {
-    title: "Hear\nthe restaurant\nambiance",
+    title: "Plongez dans\nl'ambiance sonore\nd'un restaurant",
     keyword: "restaurant",
-    description: "A sound will play for about 30 seconds and will gradually get louder. Press the button as soon as you hear it.",
+    description: "Le son va se lancer pendant 30 secondes et augmentera progressivement. Cliquez sur le bouton dès que vous l'entendez.",
     next: "street"
   },
   street: {
-    title: "Hear\nthe street\nambiance",
-    keyword: "street",
-    description: "A sound will play for about 30 seconds and will gradually get louder. Press the button as soon as you hear it.",
+    title: "Écoutez le bruit\nde la rue",
+    keyword: "rue",
+    description: "Le son va se lancer pendant 30 secondes et augmentera progressivement. Cliquez sur le bouton dès que vous l'entendez.",
     next: "music"
   },
   music: {
-    title: "Hear\nthe musical\nambiance",
-    keyword: "musical",
-    description: "A sound will play for about 30 seconds and will gradually get louder. Press the button as soon as you hear it.",
+    title: "Écoutez cette\nambiance musicale",
+    keyword: "musicale",
+    description: "Le son va se lancer pendant 30 secondes et augmentera progressivement. Cliquez sur le bouton dès que vous l'entendez.",
     next: "age-selection"
   }
 };

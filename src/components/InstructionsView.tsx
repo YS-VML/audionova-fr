@@ -12,47 +12,47 @@ export default function InstructionsView({ onReady, buttonless }: InstructionsVi
     <main className={`${styles.container} animate-fade-in`}>
       <Header />
       
-      <h1 className={styles.title}>Before you start</h1>
-      
+      <h1 className={styles.title}>Avant de commencer</h1>
+
       <div className={styles.instructionList}>
         <div className={styles.instructionItem}>
           <div className={styles.iconWrapper}>
-            <Image 
-              src="/icons/quiet-place.svg" 
-              alt="Quiet place" 
-              width={24} 
-              height={24} 
+            <Image
+              src="/icons/quiet-place.svg"
+              alt="Environnement calme"
+              width={24}
+              height={24}
             />
           </div>
-          <p>Find a quiet place</p>
+          <p>Trouvez un environnement calme</p>
         </div>
         <div className={styles.instructionItem}>
           <div className={styles.iconWrapper}>
-            <Image 
-              src="/icons/headphones.svg" 
-              alt="Headphones" 
-              width={24} 
-              height={24} 
+            <Image
+              src="/icons/headphones.svg"
+              alt="Casque audio"
+              width={24}
+              height={24}
             />
           </div>
-          <p>Use headphones</p>
+          <p>Utilisez un casque ou des écouteurs</p>
         </div>
         <div className={styles.instructionItem}>
           <div className={styles.iconWrapper}>
-            <Image 
-              src="/icons/volume.svg" 
-              alt="Volume" 
-              width={24} 
-              height={24} 
+            <Image
+              src="/icons/volume.svg"
+              alt="Volume"
+              width={24}
+              height={24}
             />
           </div>
-          <p>Set your device volume<br />to 100%</p>
+          <p>Réglez le volume sonore<br />de votre appareil à 100%</p>
         </div>
       </div>
       {!buttonless && (
         <div className={styles.buttonWrapper}>
           <button className={styles.button} onClick={onReady}>
-            I'm ready
+            Je suis prêt(e)
           </button>
         </div>
       )}

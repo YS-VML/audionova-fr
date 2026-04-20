@@ -169,23 +169,23 @@ export default function Home() {
 
   if (view === 'welcome') {
     circleVariant = 'default';
-    circleLabel = <>Start</>;
+    circleLabel = <>Commencer</>;
     circleOnClick = handleStart;
   } else if (view === 'instructions') {
     circleVariant = 'default';
-    circleLabel = "I'm ready";
+    circleLabel = "Je suis prêt(e)";
     circleOnClick = handleReady;
   } else if (view.startsWith('test-')) {
     if (testStatus === 'intro') {
       circleVariant = 'default';
-      circleLabel = <>Start</>;
+      circleLabel = <>Commencer</>;
       circleOnClick = startTest;
     } else if (testStatus === 'countdown') {
       circleVariant = 'countdown';
       circleCountdown = countdown;
     } else if (testStatus === 'testing') {
       circleVariant = 'testing';
-      circleLabel = <>I hear<br/>the sound</>;
+      circleLabel = <>J&apos;entends<br/>le son</>;
       circleOnClick = handleHeard;
       circleBackgroundImage = `/img/sounds/${currentTestStage}.webp`;
     } else if (testStatus === 'success') {
@@ -236,27 +236,27 @@ export default function Home() {
         {/* Footer Links (Relative to Circle) */}
         <div className={styles.relativeFooter}>
           {(view.startsWith('test-') || view === 'age-selection') && (
-            <button 
-              className={styles.backButton} 
+            <button
+              className={styles.backButton}
               onClick={view === 'age-selection' ? handleAgeBack : handleTestBack}
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M19 12H5M12 19l-7-7 7-7"/>
               </svg>
-              Back
+              Retour
             </button>
           )}
 
           {view !== 'result' && (
-            <a 
-              href="#" 
+            <a
+              href="#"
               className={styles.legalLink}
               onClick={(e) => {
                 e.preventDefault();
                 setIsLegalOpen(true);
               }}
             >
-              LEGAL
+              Mentions légales
             </a>
           )}
         </div>

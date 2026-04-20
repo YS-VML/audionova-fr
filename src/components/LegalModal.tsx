@@ -13,64 +13,67 @@ export default function LegalModal({ isOpen, onClose }: LegalModalProps) {
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <button className={styles.closeButton} onClick={onClose}>
-          Close ✕
+          Fermer ✕
         </button>
 
-        <h2 className={styles.title}>LEGAL</h2>
+        <h2 className={styles.title}>MENTIONS LÉGALES</h2>
 
-        {/* #1 Test Results Disclaimer */}
+        {/* #1 Avertissement résultats */}
         <div className={styles.section}>
-          <h3 className={styles.sectionTitle}>Results Disclaimer</h3>
+          <h3 className={styles.sectionTitle}>Avertissement concernant les résultats</h3>
           <div className={styles.scrollableContent}>
             <p className={styles.text}>
-              The information provided gives indicative results only and is not a medical diagnosis.
-              For a comprehensive hearing evaluation, please consult a hearing care professional
-              at your nearest AudioNova center.
+              Les informations fournies ont une valeur strictement indicative et ne constituent pas un diagnostic médical.
+              Pour un bilan auditif complet, veuillez consulter un ORL.
             </p>
           </div>
         </div>
 
-        {/* #2 Environmental Disclaimer */}
+        {/* #2 Avertissement environnement */}
         <div className={styles.section}>
-          <h3 className={styles.sectionTitle}>Environmental Disclaimer</h3>
+          <h3 className={styles.sectionTitle}>Avertissement concernant l&apos;environnement</h3>
           <div className={styles.scrollableContent}>
             <p className={styles.text}>
-              For accurate results, please perform this in a quiet environment using headphones.
-              Background noise (street, public transport, etc.) may affect your results.
+              Pour obtenir des résultats précis, veuillez effectuer ce test dans un environnement calme en utilisant un casque.
+              Les bruits de fond (rues, transports en commun, etc.) peuvent fausser vos résultats.
             </p>
           </div>
         </div>
 
-        {/* #3 Privacy Notice */}
+        {/* #3 Politique de confidentialité */}
         <div className={styles.section}>
-          <h3 className={styles.sectionTitle}>Privacy Notice</h3>
+          <h3 className={styles.sectionTitle}>Politique de confidentialité</h3>
           <div className={styles.scrollableContent}>
             <p className={styles.text}>
-              The AudioNova Hearing Check does not collect, process, or store any personally identifiable information from visitors. Tracking cookies and analytics tools used on the Hearing Check itself collect minimal information, and AudioNova does not sell or share this data for cross-context behavioral advertising. Personal information processed by the Hearing Check does not constitute Protected Health Information, as that term is defined under HIPAA. For more information about your rights and how AudioNova manages your personal information, please refer to our
-              <a className={styles.legalLink} href="https://www.audionova.com/rights-and-policies/" target="_blank">Rights & Policies</a>
+              AuditionSanté ne collecte, ne traite et ne conserve aucune donnée à caractère personnel de l&apos;utilisateur pour la réalisation du test auditif. Les cookies utilisés dans le cadre du test auditif sont strictement nécessaires à la fourniture du service et AuditionSanté ne vend ni ne partage ces données auprès de tiers à des fins publicitaires. Pour en savoir plus sur vos droits et sur la manière dont AuditionSanté gère vos informations personnelles, veuillez consulter notre{' '}
+              <a className={styles.legalLink} href="https://www.auditionsante.fr/politique-de-confidentialite/" target="_blank">Politique de confidentialité</a>.
+              Pour exercer vos droits, merci de nous adresser votre demande par courriel à{' '}
+              <a className={styles.legalLink} href="mailto:rgpd@auditionsante.fr">rgpd@auditionsante.fr</a>{' '}
+              ou par courrier chez SONOVA AUDIOLOGICAL CARE FRANCE SAS – Service de la protection des données – 1134 Chemin du Bartassec (46000) CAHORS.
+              Vous avez également la possibilité d&apos;introduire une réclamation auprès de la CNIL.
             </p>
           </div>
         </div>
 
-        {/* Contact placeholders */}
+        {/* Contact */}
         <div className={styles.section}>
           <h3 className={styles.sectionTitle}>Contact</h3>
           <div className={styles.contactList}>
             <div className={styles.contactItem}>
-              <Image src="/icons/location.svg" alt="Location" width={20} height={20} />
+              <Image src="/icons/location.svg" alt="Localisation" width={20} height={20} />
               <span>
-                AudioNova<br />
-                <a href="https://www.audionova.com/centers/search/" target="_blank">Find a center</a><br />
+                AuditionSanté<br />
+                <a href="https://www.auditionsante.fr/recherche-centres/" target="_blank">Trouver un centre</a>
               </span>
             </div>
             <div className={styles.contactItem}>
-              <Image src="/icons/call.svg" alt="Phone" width={20} height={20} />
-              <span><a href="tel:888-845-7931" target="_blank">888-845-7931</a></span>
+              <Image src="/icons/call.svg" alt="Téléphone" width={20} height={20} />
+              <span><a href="tel:0800711999" target="_blank">0 800 711 999</a></span>
             </div>
-            {/* <div className={styles.contactItem}>
-              <Image src="/icons/email.svg" alt="Email" width={20} height={20} />
-              <span>[local-market@email.com]</span>
-            </div> */}
+            <div className={styles.contactItem}>
+              <Image src="/icons/email.svg" alt="E-mail" width={20} height={20} />
+              <span><a href="mailto:crc@auditionsante.fr">crc@auditionsante.fr</a></span>
+            </div>
           </div>
         </div>
       </div>

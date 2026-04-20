@@ -52,7 +52,7 @@ export default function TestView({ stage, status, isExitingIntro, config, audioR
           </p>
           {!buttonless && (
              <div className={`${styles.buttonWrapper} ${isExitingIntro ? 'animate-fade-out' : 'animate-fade-in'}`}>
-               <button className={styles.circleButton}>Start</button>
+               <button className={styles.circleButton}>Commencer</button>
              </div>
           )}
         </>

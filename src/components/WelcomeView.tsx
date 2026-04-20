@@ -13,19 +13,19 @@ export default function WelcomeView({ onStart, buttonless }: WelcomeViewProps) {
       
       <div className={styles.content}>
         <h1 className={styles.title}>
-          Your hearing<br />matters
+          Votre audition<br />compte
         </h1>
         <p className={styles.description}>
-          <strong>3 quick steps</strong> to see how your hearing is doing
+          <strong>3 étapes rapides</strong> pour tester votre audition
         </p>
-        
-        <div className={styles.ctaText}>Check it today</div>
+
+        <div className={styles.ctaText}>Vérifiez dès maintenant</div>
       </div>
 
       {!buttonless && (
         <div className={styles.buttonWrapper}>
           <button className={styles.button} onClick={onStart}>
-            Start
+            Commencer
           </button>
         </div>
       )}

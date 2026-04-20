@@ -16,29 +16,29 @@ export default function AgeSelectionView({ onSelect, onBack }: AgeSelectionViewP
     <main className={`${styles.container} animate-fade-in`}>
       <Header />
       
-      <div className={styles.label}>ONE MORE THING</div>
+      <div className={styles.label}>UNE DERNIÈRE CHOSE</div>
       <h1 className={styles.title}>
-        For a more <strong>personalized result,</strong> please select your age group
+        Pour des résultats plus <strong>personnalisés,</strong> sélectionnez votre tranche d&apos;âge
       </h1>
-      
+
       <div className={styles.buttonGroup}>
-        <button 
+        <button
           className={styles.button}
           onClick={() => handleSelection('under-50')}
         >
-          Under 50
+          Moins de 50 ans
         </button>
-        <button 
+        <button
           className={styles.button}
           onClick={() => handleSelection('51-70')}
         >
-          51-70
+          51-70 ans
         </button>
-        <button 
+        <button
           className={styles.button}
           onClick={() => handleSelection('70+')}
         >
-          70+
+          Plus de 70 ans
         </button>
       </div>
     </main>

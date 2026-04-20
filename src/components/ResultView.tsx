@@ -29,13 +29,12 @@ export default function ResultView({ onLegalClick }: ResultViewProps) {
   // 0-33: 1, 34-66: 2, 67-100: 3
   const scoreLevel = score === null ? 1 : Math.min(3, Math.max(1, Math.ceil(score / 33.33)));
 
-  // Title logic
   const getTitle = () => {
     switch (scoreLevel) {
-      case 1: return <>Your hearing may be <span>reduced</span></>;
-      case 2: return <>Your hearing may need a <span>closer check</span></>;
-      case 3: return <>Your hearing seems <span>excellent</span></>;
-      default: return <>Error</>;
+      case 1: return <>Votre audition semble être <span>réduite</span></>;
+      case 2: return <>Votre audition peut nécessiter un <span>examen approfondi</span></>;
+      case 3: return <>Votre audition semble <span>excellente</span></>;
+      default: return <>Erreur</>;
     }
   };
 
@@ -81,21 +80,21 @@ export default function ResultView({ onLegalClick }: ResultViewProps) {
 
   const handleShare = () => {
     const shareMessages = [
-      "Check what you hear. Explore your hearing with AudioNova.",
-      "Can you hear it? Explore your hearing with AudioNova.",
-      "Got 30 seconds? Explore your hearing with AudioNova."
+      "Découvrez comment vous entendez. Testez votre audition avec AuditionSanté.",
+      "Vous entendez bien ? Testez votre audition avec AuditionSanté.",
+      "30 secondes suffisent. Testez votre audition avec AuditionSanté."
     ];
     const randomMessage = shareMessages[Math.floor(Math.random() * shareMessages.length)];
 
     if (navigator.share) {
       navigator.share({
-        title: 'Audionova',
+        title: 'AuditionSanté',
         text: randomMessage,
-        url: 'https://audionova-v1.vercel.app/',
+        url: window.location.href,
       })
       .catch((error) => console.log('Error sharing', error));
     } else {
-      alert("Sharing is not supported on this browser.");
+      alert("Le partage n'est pas pris en charge sur ce navigateur.");
     }
   };
 
@@ -133,29 +132,34 @@ export default function ResultView({ onLegalClick }: ResultViewProps) {
                 className={styles.spotlight} 
               />
               
-              <div className={styles.resultLabel}>Your result</div>
+              <div className={styles.resultLabel}>Votre résultat</div>
             </div>
           </div>
 
           <div className={styles.resultActions}>
             {scoreLevel === 1 && (
-              <button className={styles.button} onClick={() => window.open('https://www.audionova.com', '_blank')}>
-                Book a free hearing test
+              <button className={styles.button} onClick={() => window.open('https://www.auditionsante.fr/demander-rendez-vous/', '_blank')}>
+                Prenez rendez-vous pour un bilan auditif gratuit
               </button>
             )}
             {scoreLevel === 2 && (
-              <button className={styles.button} onClick={() => window.open('https://hearing-screener.beyondhearing.org/aLXvXz/welcome', '_blank')}>
-                Check your hearing
+              <button className={styles.button} onClick={() => window.open('https://www.auditionsante.fr/demander-rendez-vous/', '_blank')}>
+                Prenez rendez-vous pour un bilan auditif gratuit
               </button>
             )}
-            
+            {scoreLevel === 3 && (
+              <button className={styles.button} onClick={() => window.open('https://www.auditionsante.fr/recherche-centres/', '_blank')}>
+                Trouver un centre
+              </button>
+            )}
+
             <button className={styles.inviteLink} onClick={handleShare}>
-               Invite someone to try it out
-              <Image 
-                src="/icons/arrow-top-right.svg" 
-                alt="" 
-                width={16} 
-                height={16} 
+              Invitez quelqu&apos;un à l&apos;essayer
+              <Image
+                src="/icons/arrow-top-right.svg"
+                alt=""
+                width={16}
+                height={16}
               />
             </button>
           </div>
@@ -163,76 +167,69 @@ export default function ResultView({ onLegalClick }: ResultViewProps) {
 
         {/* Column 2: Recommendation */}
         {scoreLevel === 1 ? (
-          <div className={`${styles.card} ${styles.fadeIn}`} style={{ animationDelay: '0.2s' }}>
-            <div className={styles.cardLabel}>RECOMMENDED FOR YOU</div>
+          <div className={`${styles.card} ${styles.fadeIn}`} style={{ animationDelay: ‘0.2s’ }}>
+            <div className={styles.cardLabel}>RECOMMANDÉ POUR VOUS</div>
             <h2 className={styles.cardTitle}>Phonak Virto™ R Infinio</h2>
             <div className={styles.productImage}>
-              <Image 
-                src="/icons/elipse.svg" 
-                alt="" 
-                width={250} 
-                height={100} 
+              <Image
+                src="/icons/elipse.svg"
+                alt=""
+                width={250}
+                height={100}
                 className={styles.ringBack}
               />
-              <Image 
-                src="/img/products/phonak.webp" 
-                alt="Phonak Virto™ R Infinio" 
-                width={140} 
-                height={140} 
+              <Image
+                src="/img/products/phonak.webp"
+                alt="Phonak Virto™ R Infinio"
+                width={140}
+                height={140}
                 className={styles.productImg}
               />
-              <Image 
-                src="/icons/half-elipse.svg" 
-                alt="" 
-                width={250} 
-                height={100} 
+              <Image
+                src="/icons/half-elipse.svg"
+                alt=""
+                width={250}
+                height={100}
                 className={styles.ringFront}
               />
             </div>
-            <a href="https://www.audionova.com/phonak-virto-r-infinio/" className={styles.outlineButton}>Discover the product</a>
+            <a href="https://www.auditionsante.fr/recherche-centres/" className={styles.outlineButton}>Découvrez le produit</a>
           </div>
         ) : scoreLevel === 2 ? (
-          <div className={`${styles.card} ${styles.articleCard} ${styles.fadeIn}`} style={{ animationDelay: '0.2s' }}>
+          <div className={`${styles.card} ${styles.articleCard} ${styles.fadeIn}`} style={{ animationDelay: ‘0.2s’ }}>
             <div className={styles.articleImageContainer}>
-              <Image 
-                src="/img/articles/article1.webp" 
-                alt="Regular hearing tests"
-                width={320} 
-                height={200} 
+              <Image
+                src="/img/articles/article1.webp"
+                alt="Bilan auditif"
+                width={320}
+                height={200}
                 className={styles.articleImage}
               />
             </div>
             <div className={styles.articleContent}>
-              <div className={styles.cardLabel}>RECOMMENDED FOR YOU</div>
-              <h2 className={styles.cardTitle}>Know When to Get Checked</h2>
-              <p className={styles.articleDescription}>
-                Many don't know when to get a hearing test unless they have trouble hearing. Let’s change that.
-              </p>
-              <button className={styles.outlineButton} onClick={() => window.open('https://www.audionova.com/your-hearing-health/when-to-get-checked/', '_blank')}>
-                Read the article
+              <div className={styles.cardLabel}>RECOMMANDÉ POUR VOUS</div>
+              <h2 className={styles.cardTitle}>Découvrez quand passer un test auditif</h2>
+              <button className={styles.outlineButton} onClick={() => window.open(‘https://www.auditionsante.fr/bilan/ai-je-besoin-d-un-appareil-auditif/’, ‘_blank’)}>
+                Lire l&apos;article
               </button>
             </div>
           </div>
         ) : (
-          <div className={`${styles.card} ${styles.articleCard} ${styles.fadeIn}`} style={{ animationDelay: '0.2s' }}>
+          <div className={`${styles.card} ${styles.articleCard} ${styles.fadeIn}`} style={{ animationDelay: ‘0.2s’ }}>
             <div className={styles.articleImageContainer}>
-              <Image 
-                src="/img/articles/article2.webp" 
-                alt="Regular hearing tests" 
-                width={320} 
-                height={200} 
+              <Image
+                src="/img/articles/article2.webp"
+                alt="Protéger son audition"
+                width={320}
+                height={200}
                 className={styles.articleImage}
               />
             </div>
             <div className={styles.articleContent}>
-              <div className={styles.cardLabel}>HOW TO PROTECT YOUR HEARING</div>
-              <h2 className={styles.cardTitle}>Steps to Prevent Hearing Loss</h2>
-              {/* <p className={styles.articleDescription}>
-                Know When to Get Checked
-                Many don't know when to get a hearing test unless they have trouble hearing. Let’s change that.
-              </p> */}
-              <button className={styles.outlineButton} onClick={() => window.open('https://www.audionova.com/your-hearing-health/protect-your-hearing/', '_blank')}>
-                Read the article
+              <div className={styles.cardLabel}>COMMENT PROTÉGER SON AUDITION</div>
+              <h2 className={styles.cardTitle}>Les étapes pour protéger son audition</h2>
+              <button className={styles.outlineButton} onClick={() => window.open(‘https://www.auditionsante.fr/protection-auditive/’, ‘_blank’)}>
+                Lire l&apos;article
               </button>
             </div>
           </div>
@@ -240,29 +237,31 @@ export default function ResultView({ onLegalClick }: ResultViewProps) {
 
         {/* Column 3: Contact */}
         <div className={`${styles.card} ${styles.fadeIn}`} style={{ animationDelay: '0.3s' }}>
-          <div className={styles.cardLabel}>NEED ASSISTANCE?</div>
-          <h2 className={styles.cardTitle}>Meet our hearing care experts</h2>
+          <div className={styles.cardLabel}>BESOIN D&apos;AIDE ?</div>
+          <h2 className={styles.cardTitle}>Rencontrez nos experts de l&apos;audition</h2>
           <div className={styles.contactList}>
             <div className={styles.contactItem}>
               <Image src="/icons/location.svg" alt="" width={24} height={24} />
-              <a href="https://www.audionova.com/centers/search/" target="_blank">Find a center</a>
+              <a href="https://www.auditionsante.fr/recherche-centres/" target="_blank">Trouver un centre</a>
             </div>
-            <div className={styles.contactItem}>
-              <Image src="/icons/call.svg" alt="" width={24} height={24} />
-              <span><a href="tel:888-845-7931" target="_blank">888-845-7931</a></span>
-            </div>
-            {/* <div className={styles.contactItem}>
-              <Image src="/icons/email.svg" alt="" width={24} height={24} />
-              <a href="mailto:info@audionova.com">
-                info@audionova.com
-              </a>
-            </div> */}
+            {scoreLevel !== 3 && (
+              <>
+                <div className={styles.contactItem}>
+                  <Image src="/icons/call.svg" alt="" width={24} height={24} />
+                  <span><a href="tel:0800711999" target="_blank">0 800 711 999</a></span>
+                </div>
+                <div className={styles.contactItem}>
+                  <Image src="/icons/email.svg" alt="" width={24} height={24} />
+                  <a href="mailto:crc@auditionsante.fr">crc@auditionsante.fr</a>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
 
       <button className={styles.legalButton} onClick={onLegalClick}>
-        LEGAL
+        MENTIONS LÉGALES
       </button>
     </main>
   );
