@@ -167,7 +167,7 @@ export default function ResultView({ onLegalClick }: ResultViewProps) {
 
         {/* Column 2: Recommendation */}
         {scoreLevel === 1 ? (
-          <div className={`${styles.card} ${styles.fadeIn}`} style={{ animationDelay: ‘0.2s’ }}>
+          <div className={`${styles.card} ${styles.fadeIn}`} style={{ animationDelay: '0.2s' }}>
             <div className={styles.cardLabel}>RECOMMANDÉ POUR VOUS</div>
             <h2 className={styles.cardTitle}>Phonak Virto™ R Infinio</h2>
             <div className={styles.productImage}>
@@ -196,7 +196,7 @@ export default function ResultView({ onLegalClick }: ResultViewProps) {
             <a href="https://www.auditionsante.fr/recherche-centres/" className={styles.outlineButton}>Découvrez le produit</a>
           </div>
         ) : scoreLevel === 2 ? (
-          <div className={`${styles.card} ${styles.articleCard} ${styles.fadeIn}`} style={{ animationDelay: ‘0.2s’ }}>
+          <div className={`${styles.card} ${styles.articleCard} ${styles.fadeIn}`} style={{ animationDelay: '0.2s' }}>
             <div className={styles.articleImageContainer}>
               <Image
                 src="/img/articles/article1.webp"
@@ -209,13 +209,13 @@ export default function ResultView({ onLegalClick }: ResultViewProps) {
             <div className={styles.articleContent}>
               <div className={styles.cardLabel}>RECOMMANDÉ POUR VOUS</div>
               <h2 className={styles.cardTitle}>Découvrez quand passer un test auditif</h2>
-              <button className={styles.outlineButton} onClick={() => window.open(‘https://www.auditionsante.fr/bilan/ai-je-besoin-d-un-appareil-auditif/’, ‘_blank’)}>
+              <button className={styles.outlineButton} onClick={() => window.open('https://www.auditionsante.fr/bilan/ai-je-besoin-d-un-appareil-auditif/', '_blank')}>
                 Lire l&apos;article
               </button>
             </div>
           </div>
         ) : (
-          <div className={`${styles.card} ${styles.articleCard} ${styles.fadeIn}`} style={{ animationDelay: ‘0.2s’ }}>
+          <div className={`${styles.card} ${styles.articleCard} ${styles.fadeIn}`} style={{ animationDelay: '0.2s' }}>
             <div className={styles.articleImageContainer}>
               <Image
                 src="/img/articles/article2.webp"
@@ -228,7 +228,7 @@ export default function ResultView({ onLegalClick }: ResultViewProps) {
             <div className={styles.articleContent}>
               <div className={styles.cardLabel}>COMMENT PROTÉGER SON AUDITION</div>
               <h2 className={styles.cardTitle}>Les étapes pour protéger son audition</h2>
-              <button className={styles.outlineButton} onClick={() => window.open(‘https://www.auditionsante.fr/protection-auditive/’, ‘_blank’)}>
+              <button className={styles.outlineButton} onClick={() => window.open('https://www.auditionsante.fr/protection-auditive/', '_blank')}>
                 Lire l&apos;article
               </button>
             </div>
