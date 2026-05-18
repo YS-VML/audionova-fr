@@ -46,11 +46,13 @@ export default function LegalModal({ isOpen, onClose }: LegalModalProps) {
           <div className={styles.scrollableContent}>
             <p className={styles.text}>
               AuditionSanté ne collecte, ne traite et ne conserve aucune donnée à caractère personnel de l&apos;utilisateur pour la réalisation du test auditif. Les cookies utilisés dans le cadre du test auditif sont strictement nécessaires à la fourniture du service et AuditionSanté ne vend ni ne partage ces données auprès de tiers à des fins publicitaires. Pour en savoir plus sur vos droits et sur la manière dont AuditionSanté gère vos informations personnelles, veuillez consulter notre{' '}
-              <a className={styles.legalLink} href="https://www.auditionsante.fr/politique-de-confidentialite/" target="_blank">Politique de confidentialité</a>.
-              Pour exercer vos droits, merci de nous adresser votre demande par courriel à{' '}
+              <a className={styles.legalLink} href="https://www.auditionsante.fr/protection-des-donnees/" target="_blank">Politique de confidentialité</a>{' '}
+              et notre page destinée à l&apos;utilisation des{' '}
+              <a className={styles.legalLink} href="https://www.auditionsante.fr/politique-en-matieres-de-cookies/" target="_blank">Cookies</a>.
+              Pour exercer vos droits et/ou pour toutes questions concernant vos données personnelles et leur utilisation, merci de nous adresser votre demande par courriel à l&apos;adresse suivante :{' '}
               <a className={styles.legalLink} href="mailto:rgpd@auditionsante.fr">rgpd@auditionsante.fr</a>{' '}
               ou par courrier chez SONOVA AUDIOLOGICAL CARE FRANCE SAS – Service de la protection des données – 1134 Chemin du Bartassec (46000) CAHORS.
-              Vous avez également la possibilité d&apos;introduire une réclamation auprès de la CNIL.
+              Vous avez également la possibilité d&apos;introduire une réclamation auprès de la Commission Nationale de l&apos;Informatique et des Libertés (CNIL).
             </p>
           </div>
         </div>

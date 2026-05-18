@@ -31,8 +31,8 @@ export default function ResultView({ onLegalClick }: ResultViewProps) {
 
   const getTitle = () => {
     switch (scoreLevel) {
-      case 1: return <>Votre audition semble être <span>réduite</span></>;
-      case 2: return <>Votre audition peut nécessiter un <span>examen approfondi</span></>;
+      case 1: return <>Votre audition semble avoir <span>diminué</span></>;
+      case 2: return <>Nous vous recommandons un <span>test auditif en centre</span></>;
       case 3: return <>Votre audition semble <span>excellente</span></>;
       default: return <>Erreur</>;
     }
@@ -154,7 +154,7 @@ export default function ResultView({ onLegalClick }: ResultViewProps) {
             )}
 
             <button className={styles.inviteLink} onClick={handleShare}>
-              Invitez quelqu&apos;un à l&apos;essayer
+              Invitez un proche à faire le test en ligne
               <Image
                 src="/icons/arrow-top-right.svg"
                 alt=""
@@ -226,10 +226,9 @@ export default function ResultView({ onLegalClick }: ResultViewProps) {
               />
             </div>
             <div className={styles.articleContent}>
-              <div className={styles.cardLabel}>COMMENT PROTÉGER SON AUDITION</div>
-              <h2 className={styles.cardTitle}>Les étapes pour protéger son audition</h2>
+                <h2 className={styles.cardTitle}>Comment protéger son audition</h2>
               <button className={styles.outlineButton} onClick={() => window.open('https://www.auditionsante.fr/protection-auditive/', '_blank')}>
-                Lire l&apos;article
+                Découvrez comment protéger votre audition
               </button>
             </div>
           </div>
